@@ -1,3 +1,5 @@
+import 'package:despesas/cardTransaction.dart';
+import 'package:despesas/grafico.dart';
 import 'package:despesas/model/transaction.dart';
 import 'package:flutter/material.dart';
 
@@ -28,39 +30,11 @@ class HomePage  extends StatelessWidget {
         title: Text('Controle de despesas'),
       ),
       body: Column(       
-        // crossAxisAlignment: CrossAxisAlignment.center, // default
-        // mainAxisAlignment: MainAxisAlignment.start, // default
         mainAxisAlignment: MainAxisAlignment.spaceAround, 
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Container(
-            // width: double.infinity,
-            height: 100,
-            child: Card(
-              child: Text('AQUI FICARA O GRAFICO'),
-              color: Colors.grey[350],
-              elevation: 5,
-            ),
-          ),
-         Column(
-           children: this._transaction.map((transaction) {
-             return Card(
-               child: Row(
-                 children: <Widget>[
-                   Container(
-                     child: Text(transaction.value.toString()),
-                   ),
-                   Column(
-                     children: <Widget>[
-                       Text(transaction.title),
-                       Text(transaction.date.toString()),
-                     ],
-                   )
-                 ],
-               ),
-             );
-           }).toList(),
-         )
+          Grafico(),
+          CardTransaction(_transaction)
         ],
       ),
     );
