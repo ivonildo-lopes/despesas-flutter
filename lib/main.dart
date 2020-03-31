@@ -42,9 +42,13 @@ class HomePage  extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Card(
-            child: Text('AQUI FICARA A LISTA DE GASTOS'),
-          ),
+         Column(
+           children: this._transaction.map((transaction) {
+             return Card(
+               child: Text(transaction.title),
+             );
+           }).toList(),
+         )
         ],
       ),
     );
