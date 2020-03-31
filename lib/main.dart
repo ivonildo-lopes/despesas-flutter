@@ -15,10 +15,10 @@ class Despesa  extends StatelessWidget {
 class HomePage  extends StatelessWidget {
    
    final _transaction = [
-      Transaction(id: '1', title: 'cinema', valor: 105, date: DateTime.now()),
-      Transaction(id: '2', title: 'compras', valor: 975.50, date: DateTime.now()),
-      Transaction(id: '3', title: 'boneco henry', valor: 79.99, date: DateTime.now()),
-      Transaction(id: '4', title: 'lanche', valor: 45.99, date: DateTime.now()),
+      Transaction(id: '1', title: 'cinema', value: 105, date: DateTime.now()),
+      Transaction(id: '2', title: 'compras', value: 975.50, date: DateTime.now()),
+      Transaction(id: '3', title: 'boneco henry', value: 79.99, date: DateTime.now()),
+      Transaction(id: '4', title: 'lanche', value: 45.99, date: DateTime.now()),
    ];
 
   @override
@@ -45,7 +45,19 @@ class HomePage  extends StatelessWidget {
          Column(
            children: this._transaction.map((transaction) {
              return Card(
-               child: Text(transaction.title),
+               child: Row(
+                 children: <Widget>[
+                   Container(
+                     child: Text(transaction.value.toString()),
+                   ),
+                   Column(
+                     children: <Widget>[
+                       Text(transaction.title),
+                       Text(transaction.date.toString()),
+                     ],
+                   )
+                 ],
+               ),
              );
            }).toList(),
          )
