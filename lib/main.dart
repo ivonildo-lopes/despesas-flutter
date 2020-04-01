@@ -4,27 +4,28 @@ import 'package:flutter/material.dart';
 
 main() => runApp(Despesa());
 
-class Despesa  extends StatelessWidget {
+class Despesa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(home: HomePage());
   }
 }
 
-class HomePage  extends StatelessWidget {
-
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Controle de despesas'),
       ),
-      body: Column(       
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Grafico(),
-          TransactionUser()
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Grafico(),
+            TransactionUser()
+          ],
+        ),
       ),
     );
   }

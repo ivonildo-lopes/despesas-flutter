@@ -31,7 +31,6 @@ class _TransactionUserState extends State<TransactionUser> {
             id: Random().nextDouble().toString(), 
             title: title, 
             value: value, 
-            // value: double.parse(value), 
             date: DateTime.now()
           )
         );
@@ -42,8 +41,8 @@ class _TransactionUserState extends State<TransactionUser> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        CardTransactionNew(_addTransaction),
         CardTransaction(_transactions), 
-        CardTransactionNew(_addTransaction)
       ],
     );
   }
