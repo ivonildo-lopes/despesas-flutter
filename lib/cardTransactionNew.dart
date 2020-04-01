@@ -5,7 +5,9 @@ class CardTransactionNew  extends StatelessWidget {
    final titleControlher = TextEditingController();
    final valueControlher = TextEditingController();
 
-   CardTransactionNew();
+  final void Function(String, double) addTransaction;
+
+   CardTransactionNew(this.addTransaction);
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class CardTransactionNew  extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
+                      this.addTransaction(titleControlher.text, double.parse(valueControlher.text));
                       print(titleControlher.text);
                       print(valueControlher.text);
                     },
