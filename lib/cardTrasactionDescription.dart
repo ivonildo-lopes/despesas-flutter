@@ -1,5 +1,6 @@
 import 'package:despesas/model/transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class CardTransactionDescription extends StatelessWidget {
   final Transaction transaction;
@@ -18,9 +19,10 @@ class CardTransactionDescription extends StatelessWidget {
           color: Colors.purple,
           fontWeight: FontWeight.bold,
         )),
-        Text(transaction.date.toString(),
-         style: TextStyle(
-          fontSize: 10,
+        Text(
+          DateFormat('d MMM y').format(transaction.date),
+          style: TextStyle(
+          fontSize: 12,
           color: Colors.blueGrey[300],
           fontWeight: FontWeight.normal,
         )),

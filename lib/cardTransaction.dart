@@ -19,7 +19,7 @@ class CardTransaction  extends StatelessWidget {
                child: Row(
                  children: <Widget>[
                    CardTransactionValue(transaction),
-                   CardTransactionDescription(transaction)
+                   CardTransactionDescription(transaction),
                  ],
                ),
              );

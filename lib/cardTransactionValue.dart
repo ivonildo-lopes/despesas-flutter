@@ -18,7 +18,7 @@ class CardTransactionValue extends StatelessWidget {
       )),
       padding: EdgeInsets.all(10),
       child: Text(
-        transaction.value.toString(),
+        'R\$ ${transaction.value.toStringAsFixed(2)}',
         style: TextStyle(fontWeight: FontWeight.bold, color: Colors.purple),
       ),
     );
