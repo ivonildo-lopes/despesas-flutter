@@ -38,9 +38,10 @@ class CardTransactionNew  extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      this.addTransaction(titleControlher.text, double.parse(valueControlher.text));
-                      print(titleControlher.text);
-                      print(valueControlher.text);
+                      this.addTransaction(
+                        titleControlher.text,
+                        double.tryParse(valueControlher.text) ?? 0
+                      );
                     },
                   )
                 ],
