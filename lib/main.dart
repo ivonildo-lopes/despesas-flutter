@@ -20,13 +20,10 @@ class HomePage  extends StatelessWidget {
         title: Text('Controle de despesas'),
       ),
       body: Column(       
-        // mainAxisAlignment: MainAxisAlignment.spaceAround, 
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Grafico(),
           TransactionUser()
-          // CardTransaction(null),
-          // CardTransactionNew()
         ],
       ),
     );

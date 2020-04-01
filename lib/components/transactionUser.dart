@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:despesas/cardTransactionNew.dart';
 import 'package:despesas/components/cardTransaction.dart';
+import 'package:despesas/components/cardTransactionNew.dart';
 import 'package:despesas/model/transaction.dart';
 import 'package:flutter/material.dart';
 

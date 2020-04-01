@@ -1,5 +1,5 @@
-import 'package:despesas/cardTransactionValue.dart';
-import 'package:despesas/cardTrasactionDescription.dart';
+import 'package:despesas/components/cardTransactionValue.dart';
+import 'package:despesas/components/cardTrasactionDescription.dart';
 import 'package:despesas/model/transaction.dart';
 import 'package:flutter/material.dart';
 
