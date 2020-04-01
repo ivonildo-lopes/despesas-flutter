@@ -4,29 +4,27 @@ import 'package:despesas/model/transaction.dart';
 import 'package:flutter/material.dart';
 
 class CardTransaction extends StatelessWidget {
-  final List<Transaction> _transaction;
+  final List<Transaction> _transactions;
 
-  CardTransaction(this._transaction);
+  CardTransaction(this._transactions);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      child: ListView(
-        children: <Widget>[
-          Column(
-            children: this._transaction.map((transaction) {
-              return Card(
+      height: 300,
+      child: ListView.builder(
+        itemCount: _transactions.length,
+        itemBuilder: (ctx, index){
+          final transaction = _transactions[index];
+          return Card(
                 child: Row(
                   children: <Widget>[
                     CardTransactionValue(transaction),
                     CardTransactionDescription(transaction),
                   ],
-                ),
-              );
-            }).toList(),
-          )
-        ],
+              ),
+          );
+        },
       ),
     );
   }
