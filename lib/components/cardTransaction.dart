@@ -11,24 +11,22 @@ class CardTransaction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Column(
-              children: this._transaction.map((transaction) {
-                return Card(
-                  child: Row(
-                    children: <Widget>[
-                      CardTransactionValue(transaction),
-                      CardTransactionDescription(transaction),
-                    ],
-                  ),
-                );
-              }).toList(),
-            )
-          ],
-        ),
+      height: 150,
+      child: ListView(
+        children: <Widget>[
+          Column(
+            children: this._transaction.map((transaction) {
+              return Card(
+                child: Row(
+                  children: <Widget>[
+                    CardTransactionValue(transaction),
+                    CardTransactionDescription(transaction),
+                  ],
+                ),
+              );
+            }).toList(),
+          )
+        ],
       ),
     );
   }
